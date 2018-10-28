@@ -1,0 +1,110 @@
+<!--
+	Name: Jordan Theisen
+	Date Created: 10/25/2018
+	Most Recent Version: 
+-->	
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+        
+		<title>Lucky Sevens</title>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+		<style type="text/css">
+
+			body{
+				background-color: lightblue; }
+
+			h1 {
+				margin-bottom: 20px; 
+				text-align: center; }
+			
+			#startingBet{
+				margin-bottom: 20px; }
+
+			#results {
+				border: 3px solid black; }
+
+			.numResults {
+				width: 20%;
+				text-align: center; }
+
+			.form-group button{
+				width: 100%;	}
+
+			button:hover {
+				background-color: white;
+				font-weight: bold;
+				transition-duration: 0.2;
+			}
+
+		</style> 	
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="row justify-content-center">
+				<h1>Lucky Sevens</h1>
+			</div>
+
+			<div class="row justify-content-center">
+				<form name="bettingForm" onsubmit="return playLuckySevens()" class="form-block">
+					<div class="form-group">
+		                <label for="startingBet">Starting Bet: </label>
+		                <input type="number" class="form-control" id="startingBet" value="0" style="text-align: center;">
+		            </div>
+
+				    <div class="form-group">
+				    	<button type="submit" class="btn btn-default" id="playButton">Play</button>
+		        	</div>
+	            </form>	
+			</div>	
+			<hr />
+
+			<div class="row justify-content-center">
+				<div id="tableContainer" style="display:none;">
+					<table id="results" class="table" border="1">
+
+						<h1>Results</h1>
+
+
+						<tbody>
+							<tr>
+								<td>Starting Bet</td>
+								<td class="numResults"><span id="startingBetDisplay"></span></td>
+							</tr>
+
+							<tr>
+								<td>Total Rolls Before Going Broke</td>
+								<td class="numResults"><span id="totalRowsDisplay"></span></td>
+							</tr>
+
+							<tr>
+								<td>Highest Amount Won</td>
+								<td class="numResults"><span id="highScoreDisplay"></span></td>
+							</tr>
+
+							<tr>
+								<td class="">Roll Count at Highest Amount Won</td>
+								<td class="numResults"><span id="rollHighScoreDisplay"></span></td>
+							</tr>
+						</tbody>
+						
+					</table>
+					<h6>To play again just enter a new starting bet and press play!</h6>
+				</div>
+			</div>
+		</div>
+
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script type="text/JavaScript" src="luckySevens.js"></script>
+
+	</body>
+</html>
