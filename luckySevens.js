@@ -22,9 +22,9 @@ function clearErrors() {
 function playLuckySevens() {
     var startingBet = Number(document.forms["bettingForm"]["startingBet"].value);
     var totalRolls = 0;
-    var highestAmountWon = 0;
+    var highestAmountWon = startingBet;
     var rollCountHighest = 0
-    var gameMoney = startingBet;
+
     var dice1 = 0;
     var dice2 = 0;
 
@@ -35,6 +35,9 @@ function playLuckySevens() {
         document.forms["bettingForm"]["startingBet"].focus();
         return false;
     }
+
+    //set starting bet equal to total game money. 
+    var gameMoney = startingBet;
 
     //Runs the game until there is no more money to play with.
     while(gameMoney>0){
@@ -47,17 +50,16 @@ function playLuckySevens() {
         Otherwise it subtracts 1 from game money. */
         if(dice1+dice2==7) {
             gameMoney = gameMoney + 4;
-
-            /*This nested if statement checks to see if therse is a new highest amount won. 
-            It's also subtracting the starting bet to really determine if you win money. */
-            if(gameMoney>=highestAmountWon-startingBet){
-                highestAmountWon = gameMoney;
-                rollCountHighest = totalRolls;
-            }
         }
 
         else {
             gameMoney = gameMoney - 1;
+        }
+
+        // Check if there's a new highest amount won
+        if(gameMoney>highestAmountWon){
+            highestAmountWon = gameMoney;
+            rollCountHighest = totalRolls;
         }
     }
     
